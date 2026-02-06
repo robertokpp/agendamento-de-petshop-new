@@ -1,0 +1,60 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--content-primary);
+  & > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  & .date-hour {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    & > div {
+      width: 50%;
+    }
+  }
+
+  & .btn-new {
+    width: 30%;
+    margin-left: 70%;
+  }
+}
+& .input-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  border: 1px solid var(--border-primary);
+  padding: 0.75rem;
+  border-radius: 10px;
+
+  & img {
+    width: 1.25rem;
+  }
+
+  & input,
+  textarea,
+  select {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    &:focus,
+    &:active,
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  & ::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    background: url("../assets/icons/arrow.svg") no-repeat;
+  }
+}
+
+input,
+textarea {
+  width: 100%;
+  color: var(--content-primary);
+}

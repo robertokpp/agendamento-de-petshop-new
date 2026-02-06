@@ -1,0 +1,26 @@
+.logo img {
+  background: var(--background-logo);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 10px 0;
+}
+
+.btn-new {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-ns {
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--content-brand);
+  cursor: pointer;
+}
+
+.btn-remove {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--content-tertiary);
+  
+}

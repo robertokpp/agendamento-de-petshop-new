@@ -1,0 +1,36 @@
+aside {
+  width: 45rem;
+  margin: auto;
+  & > header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  & .period {
+    background-color: var(--background-tertiary);
+    margin-block: .75rem;
+    border-radius: 0.625rem;
+    & header {
+      display: flex;
+      justify-content: space-between;
+      padding: .75rem 1.25rem;
+      border-bottom: 1px solid var(--background-logo);
+    }
+    & ul{
+      padding: 1.25rem;
+      & li{
+      display: flex;
+       justify-content: space-between;
+       padding: .75rem 1rem;
+      }
+    }
+  }
+}
+
+@media (width < 1000px) {
+  aside{
+    width: 100%;
+    padding-inline: 1rem;
+  }
+}
