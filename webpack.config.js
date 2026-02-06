@@ -50,7 +50,7 @@ module.exports = {
         use:{
           loader: "babel-loader",
           options: {
-            presets: ["@babel/presents-env"]
+            presets: ["@babel/preset-env"]
           }
         }
       }
