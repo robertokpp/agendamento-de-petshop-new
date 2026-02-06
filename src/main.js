@@ -10,11 +10,7 @@ import "./styles/form.css";
 import "./styles/global.css";
 import "./styles/utility.css";
 
+
 // scripts
-import "./scripts/modal.js";
-import dayjs from "dayjs";
-
-
-setInterval(() => {
-  console.log(dayjs().format("hh:mm:ss"))
-}, 1000);
+import "./utils/modal.js";
+import "./module/form/form.js"
