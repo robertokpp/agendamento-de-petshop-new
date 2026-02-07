@@ -15,8 +15,6 @@
   --background-body: #14151D;
   --background-tertiary: #23242C;
   --background-logo: #2E2C30;
-
-
   --border-primary: #3E3C41;
 }
 
@@ -24,3 +22,4 @@ body{
   background-color: var(--background-body);
   color: var(--content-primary);
 }
+

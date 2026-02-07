@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
-import { openingHours } from "../../utils/opening-hours";
+import { openingHours } from "../../utils/opening-hours.js";
+import { scheduleNew } from "../../services/schedule-new.js";
 
 const form = document.querySelector("form");
 const formDate = document.querySelector("#form-date");
@@ -15,22 +16,26 @@ openingHours.forEach((element) => {
   formHour.append(HourOption);
 });
 
-form.addEventListener("submit", (event) => {
-  const formName = form.querySelector("#tutors-name");
-  const formPetName = form.querySelector("#pet-name-forn")
-  const formTel = form.querySelector("#tel")
-  const formDescription = form.querySelector("#decs-service") 
-
-
-  if (!formName.value.trim()) {
-    alert("nome nao valido");
-  }
-
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  console.log("enviando");
-  console.log(formName.value);
-  console.log(formPetName.value);
-  console.log(formTel.value);
-  console.log(formDescription.value);
+  const formName = form.querySelector("#tutors-name");
+  const formPetName = form.querySelector("#pet-name-forn");
+  const formDescription = form.querySelector("#decs-service");
+
+  const id = crypto.randomUUID();
+  const TutorName = formName.value;
+  const PetName = formPetName.value;
+  const descriptionService = formDescription.value;
+  const SelectHour = formHour.value;
+  const scheduleData = formDate.value;
+
+  await scheduleNew({
+    id,
+    TutorName,
+    PetName,
+    descriptionService,
+    SelectHour,
+    scheduleData,
+  });
 });

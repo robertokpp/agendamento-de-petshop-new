@@ -14,3 +14,4 @@ import "./styles/utility.css";
 // scripts
 import "./utils/modal.js";
 import "./module/form/form.js"
+import "./utils/phone-validator.js"

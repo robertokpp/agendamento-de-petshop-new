@@ -40,6 +40,7 @@ form {
     border: none;
     width: 100%;
     background-color: transparent;
+    color: var(--content-primary);
     &:focus,
     &:active,
     &:focus-visible {
@@ -54,7 +55,11 @@ form {
 }
 
 input,
-textarea {
+textarea{
   width: 100%;
   color: var(--content-primary);
+}
+
+select option {
+  color: black;
 }
