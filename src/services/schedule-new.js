@@ -1,6 +1,6 @@
 import { apiConfig } from "./api-config.js";
 
-export async function scheduleNew({id,TutorName,PetName,descriptionService,SelectHour,scheduleData,}) { 
+export async function scheduleNew({id,TutorName,PetName,tel,descriptionService,SelectHour,scheduleData,}) { 
   try {
     await fetch(`${apiConfig.baseURL}/schedules`, {
       method: "POST",
@@ -11,6 +11,7 @@ export async function scheduleNew({id,TutorName,PetName,descriptionService,Selec
         id,
         TutorName,
         PetName,
+        tel,
         descriptionService,
         SelectHour,
         scheduleData,

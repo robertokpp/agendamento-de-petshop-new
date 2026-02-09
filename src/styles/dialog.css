@@ -10,3 +10,11 @@ dialog {
 dialog::backdrop {
   background-color: #23242cb7;
 }
+
+#closeDialog{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 36px;
+  cursor: pointer;
+}

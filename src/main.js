@@ -15,3 +15,4 @@ import "./styles/utility.css";
 import "./utils/modal.js";
 import "./module/form/form.js"
 import "./utils/phone-validator.js"
+import "./module/page-load.js"

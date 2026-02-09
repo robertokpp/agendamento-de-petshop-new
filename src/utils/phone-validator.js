@@ -1,5 +1,5 @@
 const formTel = document.querySelector("#tel");
-
+export let tel = "";
 formTel.addEventListener("input", (e) => {
   let value = formTel.value.replace(/[^0-9]/g, "");
   if (value.length > 10) {
@@ -7,7 +7,7 @@ formTel.addEventListener("input", (e) => {
   } else {
     value = value.replace(/^(\d{2})(\d{4})(\d{0,4})$/, "($1) $2-$3");
   }
-  formTel.value = value;
+  formTel.value = value
+  tel = value
 });
-
 

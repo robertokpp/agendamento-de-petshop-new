@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import { openingHours } from "../../utils/opening-hours.js";
 import { scheduleNew } from "../../services/schedule-new.js";
+import { tel } from "../../utils/phone-validator.js";
 
 const form = document.querySelector("form");
 const formDate = document.querySelector("#form-date");
@@ -34,6 +35,7 @@ form.addEventListener("submit", async (event) => {
     id,
     TutorName,
     PetName,
+    tel,
     descriptionService,
     SelectHour,
     scheduleData,
