@@ -1,13 +1,3 @@
 {
-  "schedules": [
-    {
-      "id": "f51b2c66-7fb6-4f55-9d9f-a847abb050c6",
-      "TutorName": "roberto",
-      "PetName": "CARAMELO",
-      "tel": "(68) 99902-0714",
-      "descriptionService": "",
-      "SelectHour": "09:00",
-      "scheduleData": "2026-02-09"
-    }
-  ]
+  "schedules": []
 }

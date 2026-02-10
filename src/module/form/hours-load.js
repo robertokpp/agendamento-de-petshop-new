@@ -2,10 +2,23 @@ import dayjs from "dayjs";
 import { openingHours } from "../../utils/opening-hours.js";
 
 export function hoursLoad({ date }) {
+  const formHour = document.querySelector("#form-hour");
+  formHour.innerHTML = "";
   const opening = openingHours.map((hour) => {
     const [scheduleHour] = hour.split(":");
+    console.log(date, "teste da funcao");
     const isHourPast = dayjs(date).add(scheduleHour, "hour").isAfter(dayjs());
-
     return { hour, available: isHourPast };
+  });
+
+  opening.forEach(({ hour, available }) => {
+    const option = document.createElement("option");
+    option.textContent = hour;
+    if (available) {
+      option.disabled = false;
+    } else {
+      option.disabled = true;
+    }
+    formHour.append(option);
   });
 }
