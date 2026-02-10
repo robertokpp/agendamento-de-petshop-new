@@ -16,3 +16,4 @@ import "./utils/modal.js";
 import "./module/form/form.js"
 import "./utils/phone-validator.js"
 import "./module/page-load.js"
+import "./services/schedule-fetch.js"

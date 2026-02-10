@@ -6,7 +6,6 @@ export function hoursLoad({ date }) {
   formHour.innerHTML = "";
   const opening = openingHours.map((hour) => {
     const [scheduleHour] = hour.split(":");
-    console.log(date, "teste da funcao");
     const isHourPast = dayjs(date).add(scheduleHour, "hour").isAfter(dayjs());
     return { hour, available: isHourPast };
   });
