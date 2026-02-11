@@ -1,18 +1,23 @@
 import dayjs from "dayjs";
 import { openingHours } from "../../utils/opening-hours.js";
 
-export function hoursLoad({ date, dailySchedule}) {
+export function hoursLoad({ date, dailySchedule }) {
   const formHour = document.querySelector("#form-hour");
   formHour.innerHTML = "";
-
-  // schedule. dailySchedule.forEach(hour => {
-    
-  // });
+ 
+  let disabledHour = [];
+  dailySchedule.map((hour) => {
+    disabledHour.push(hour.SelectHour)
+  });
 
   const opening = openingHours.map((hour) => {
     const [scheduleHour] = hour.split(":");
     const isHourPast = dayjs(date).add(scheduleHour, "hour").isAfter(dayjs());
-    return { hour, available: isHourPast };
+
+    const available = !disabledHour.includes(hour) && isHourPast
+    console.log(hour ,available)
+    
+    return { hour, available };
   });
 
   opening.forEach(({ hour, available }) => {

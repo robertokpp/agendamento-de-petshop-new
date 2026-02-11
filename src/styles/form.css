@@ -63,3 +63,6 @@ textarea{
 select option {
   color: black;
 }
+select option:disabled {
+  display: none;
+}

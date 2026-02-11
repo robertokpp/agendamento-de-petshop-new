@@ -4,7 +4,7 @@ const pageDate = document.querySelector("#date");
 
 pageDate.value = dayjs(new Date()).format("YYYY-MM-DD");
 
-function createInfo(period, hour, tutor, pet, service) {
+function createInfo(period, id, hour, tutor, pet, service) {
 
   const ul = document.querySelector(`${period}`);
   const li = document.createElement("li");
@@ -12,7 +12,7 @@ function createInfo(period, hour, tutor, pet, service) {
   const spanTutorPet = document.createElement("span");
   const spanService = document.createElement("span");
   const btnRemove = document.createElement("button");
-
+  li.id = id
   time.setAttribute("datetime", hour);
   time.textContent = `${hour}`;
   spanTutorPet.textContent = `${pet} / ${tutor}`;
@@ -29,7 +29,6 @@ function createInfo(period, hour, tutor, pet, service) {
 
 function reder(load) {
   const clear = document.querySelectorAll(".clear")
-  console.log(clear)
   clear.forEach(element => {
     element.innerHTML = ""
   });
@@ -38,6 +37,7 @@ function reder(load) {
     if (element.SelectHour <= "12:00") {
       createInfo(
         ".period-morning",
+        element.id,
         element.SelectHour,
         element.TutorName,
         element.PetName,
@@ -46,6 +46,7 @@ function reder(load) {
     } else if (element.SelectHour > "12:00" && element.SelectHour < "19:00") {
       createInfo(
         ".period-afternoon",
+        element.id,
         element.SelectHour,
         element.TutorName,
         element.PetName,
@@ -54,6 +55,7 @@ function reder(load) {
     } else {
       createInfo(
         ".period-night",
+        element.id,
         element.SelectHour,
         element.TutorName,
         element.PetName,

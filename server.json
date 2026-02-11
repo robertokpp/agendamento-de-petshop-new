@@ -9,25 +9,7 @@
       "SelectHour": "09:00",
       "scheduleData": "2026-02-11"
     },
-    {
-      "id": "7d002",
-      "TutorName": "JOAO PEREIRA",
-      "PetName": "MAX",
-      "tel": "(68) 99922-2222",
-      "descriptionService": "tosa",
-      "SelectHour": "10:00",
-      "scheduleData": "2026-02-11"
-    },
-    {
-      "id": "7d003",
-      "TutorName": "MARIA SILVA",
-      "PetName": "BELLA",
-      "tel": "(68) 99933-3333",
-      "descriptionService": "banho",
-      "SelectHour": "11:00",
-      "scheduleData": "2026-02-12"
-    },
-    {
+     {
       "id": "7d004",
       "TutorName": "CARLOS LIMA",
       "PetName": "THOR",
