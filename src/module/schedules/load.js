@@ -6,8 +6,8 @@ export async function schedulesDay() {
   const date = formDate.value;
 
   const dailySchedule =  await scheduleFetch({ date });
-  console.log(dailySchedule)
-  hoursLoad({ date });
+ 
+  hoursLoad({ date , dailySchedule });
 }
 
 formDate.addEventListener("input", () => {

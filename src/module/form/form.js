@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import { scheduleNew } from "../../services/schedule-new.js";
 import { tel } from "../../utils/phone-validator.js";
+import { loadRender } from "../render/render-load.js";
 
 const form = document.querySelector("form");
 const formDate = document.querySelector("#form-date");
@@ -23,6 +24,8 @@ form.addEventListener("submit", async (event) => {
   const descriptionService = formDescription.value;
   const SelectHour = formHour.value;
   const scheduleData = formDate.value;
+
+  
 
   if (TutorName.trim() === "") {
     alert("Nome do Tutor não preenchido!");
@@ -61,4 +64,10 @@ form.addEventListener("submit", async (event) => {
     SelectHour,
     scheduleData,
   });
+
+  formName.value = ""
+  formPetName.value = ""
+  formDescription.value = ""
+
+  await loadRender()
 });

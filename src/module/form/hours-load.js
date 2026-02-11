@@ -1,9 +1,14 @@
 import dayjs from "dayjs";
 import { openingHours } from "../../utils/opening-hours.js";
 
-export function hoursLoad({ date }) {
+export function hoursLoad({ date, dailySchedule}) {
   const formHour = document.querySelector("#form-hour");
   formHour.innerHTML = "";
+
+  // schedule. dailySchedule.forEach(hour => {
+    
+  // });
+
   const opening = openingHours.map((hour) => {
     const [scheduleHour] = hour.split(":");
     const isHourPast = dayjs(date).add(scheduleHour, "hour").isAfter(dayjs());

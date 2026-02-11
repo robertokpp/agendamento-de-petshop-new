@@ -64,11 +64,12 @@ function reder(load) {
 }
 
 
-async function loadRender() {
+export async function loadRender() {
   const date = pageDate.value;
   const load = await scheduleFetch({ date });
   reder(load);
 }
+
 
 loadRender()
 
