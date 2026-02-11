@@ -4,48 +4,74 @@ const pageDate = document.querySelector("#date");
 
 pageDate.value = dayjs(new Date()).format("YYYY-MM-DD");
 
-const periodMorning = document.querySelector(".period-morning");
-const periodAfternoon = document.querySelector(".period-afternoon");
-const periodNight = document.querySelector(".period-night");
+function createInfo(period, hour, tutor, pet, service) {
 
-function createInfo({ hour, tutor, pet, service }) {
+  const ul = document.querySelector(`${period}`);
   const li = document.createElement("li");
   const time = document.createElement("time");
+  const spanTutorPet = document.createElement("span");
+  const spanService = document.createElement("span");
+  const btnRemove = document.createElement("button");
+
   time.setAttribute("datetime", hour);
-  li.append(time);
-
-  const spanTutorPet = document.createAttribute("span");
-  spanTutorPet.textContent = `${tutor} / ${pet}`;
-  li.append(spanTutorPet);
-
-  const spanService = document.createAttribute("span");
+  time.textContent = `${hour}`;
+  spanTutorPet.textContent = `${pet} / ${tutor}`;
   spanService.textContent = service;
-  li.append(spanService);
-
-  const btnRemove = document.createAttribute("button");
+  btnRemove.textContent = "Remover agendamento";
   btnRemove.classList.add("btn-remove");
+
+  li.append(time);
+  li.append(spanTutorPet);
+  li.append(spanService);
   li.append(btnRemove);
+  ul.append(li);
 }
 
 function reder(load) {
+  const clear = document.querySelectorAll(".clear")
+  console.log(clear)
+  clear.forEach(element => {
+    element.innerHTML = ""
+  });
+
   load.forEach((element) => {
     if (element.SelectHour <= "12:00") {
       createInfo(
+        ".period-morning",
         element.SelectHour,
         element.TutorName,
         element.PetName,
         element.descriptionService,
       );
-    } else if (element.SelectHour >= "13:00" && element.SelectHour >= "13:00") {
+    } else if (element.SelectHour > "12:00" && element.SelectHour < "19:00") {
+      createInfo(
+        ".period-afternoon",
+        element.SelectHour,
+        element.TutorName,
+        element.PetName,
+        element.descriptionService,
+      );
     } else {
+      createInfo(
+        ".period-night",
+        element.SelectHour,
+        element.TutorName,
+        element.PetName,
+        element.descriptionService,
+      );
     }
-
-    console.log(`/ ${element.SelectHour} `);
   });
 }
 
-pageDate.addEventListener("input", async () => {
+
+async function loadRender() {
   const date = pageDate.value;
   const load = await scheduleFetch({ date });
   reder(load);
+}
+
+loadRender()
+
+pageDate.addEventListener("input", () => {
+  loadRender()
 });
