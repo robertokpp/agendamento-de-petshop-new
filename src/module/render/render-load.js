@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { scheduleFetch } from "../../services/schedule-fetch";
+import { scheduleFetch } from "../../services/schedule-fetch.js";
 const pageDate = document.querySelector("#date");
 
 pageDate.value = dayjs(new Date()).format("YYYY-MM-DD");
@@ -9,21 +9,33 @@ function createInfo(period, id, hour, tutor, pet, service) {
   const ul = document.querySelector(`${period}`);
   const li = document.createElement("li");
   const time = document.createElement("time");
-  const spanTutorPet = document.createElement("span");
+  const div = document.createElement("div")
+  const spanPet = document.createElement("span")
+  const spanTutor = document.createElement("span");
   const spanService = document.createElement("span");
   const btnRemove = document.createElement("button");
+
+  
+  
   li.id = id
   time.setAttribute("datetime", hour);
+  time.classList.add("text-time-pet")
   time.textContent = `${hour}`;
-  spanTutorPet.textContent = `${pet} / ${tutor}`;
+  spanPet.classList.add("text-time-pet")
+  spanPet.textContent = `${pet} `
+  spanTutor.classList.add("text-name")
+  spanTutor.textContent = `/ ${tutor}`;
+  spanService.classList.add("text-service")
   spanService.textContent = service;
   btnRemove.textContent = "Remover agendamento";
   btnRemove.id = id
-
   btnRemove.classList.add("btn-remove");
-
-  li.append(time);
-  li.append(spanTutorPet);
+  
+  
+  div.append(time)
+  spanPet.append(spanTutor)
+  div.append(spanPet)
+  li.append(div)
   li.append(spanService);
   li.append(btnRemove);
   ul.append(li);
@@ -69,13 +81,11 @@ function reder(load) {
 }
 
 
-
 export async function loadRender() {
   const date = pageDate.value;
   const load = await scheduleFetch({ date });
   reder(load);
 }
-
 
 loadRender()
 

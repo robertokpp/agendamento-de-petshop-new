@@ -1,10 +1,16 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Mundo Pet</title>
+    <!-- <link rel="stylesheet" href="src/styles/index.css" /> -->
   </head>
   <body>
     <div class="logo">
@@ -41,10 +47,14 @@
         </header>
 
         <ul class="period-morning clear">
-          <li>
-            <time value="09:00">09:00</time>
-            <span>thor / Fernando Costa</span>
-            <span> Vacinação </span>
+          <li id="">
+            <div>
+              <time class="text-time-pet" datetime="14:00">14:00</time>
+              <span class="text-time-pet">CARAMELO
+              <span class="text-name">/ Roberto Kennedy</span>
+              </span>
+            </div>
+            <span class="text-service">teste 3</span>
             <button class="btn-remove">Remover agendamento</button>
           </li>
         </ul>
@@ -62,9 +72,7 @@
           <span>13h-18h</span>
         </header>
 
-        <ul class="period-afternoon clear">
-
-        </ul>
+        <ul class="period-afternoon clear"></ul>
       </section>
 
       <section class="period">
@@ -79,8 +87,7 @@
           <span>19h-21h</span>
         </header>
 
-        <ul class="period-night clear">
-        </ul>
+        <ul class="period-night clear"></ul>
       </section>
 
       <div class="btn-new">

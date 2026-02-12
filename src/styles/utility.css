@@ -7,6 +7,8 @@
 .btn-new {
   display: flex;
   justify-content: flex-end;
+  width: 30%;
+  margin-left: 70%;
 }
 
 .btn-ns {
@@ -15,6 +17,11 @@
   border: none;
   background-color: var(--content-brand);
   cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.btn-ns:hover {
+  background-color: #7e6cf5;
 }
 
 .btn-remove {
@@ -22,5 +29,12 @@
   border: none;
   cursor: pointer;
   color: var(--content-tertiary);
-  
+  font-size: 0.75rem;
+}
+.btn-remove:hover {
+  color: var(--content-primary);
+}
+
+.border-top-li {
+  border-top: 1px solid black;
 }

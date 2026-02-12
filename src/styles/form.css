@@ -18,10 +18,6 @@ form {
     }
   }
 
-  & .btn-new {
-    width: 30%;
-    margin-left: 70%;
-  }
 }
 & .input-wrapper {
   display: flex;

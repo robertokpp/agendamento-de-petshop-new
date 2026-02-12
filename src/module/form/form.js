@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import { scheduleNew } from "../../services/schedule-new.js";
 import { tel } from "../../utils/phone-validator.js";
 import { loadRender } from "../render/render-load.js";
+import { schedulesDay } from "../schedules/load.js";
 
 const form = document.querySelector("form");
 const formDate = document.querySelector("#form-date");
@@ -68,6 +69,6 @@ form.addEventListener("submit", async (event) => {
   formName.value = ""
   formPetName.value = ""
   formDescription.value = ""
-
+  await schedulesDay()
   await loadRender()
 });

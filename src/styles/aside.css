@@ -9,27 +9,52 @@ aside {
 
   & .period {
     background-color: var(--background-tertiary);
-    margin-block: .75rem;
+    margin-block: 0.75rem;
     border-radius: 0.625rem;
     & header {
       display: flex;
       justify-content: space-between;
-      padding: .75rem 1.25rem;
+      padding: 0.75rem 1.25rem;
       border-bottom: 1px solid var(--background-logo);
     }
-    & ul{
+    & ul {
       padding: 1.25rem;
-      & li{
-      display: flex;
-       justify-content: space-between;
-       padding: .75rem 1rem;
+      & li {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        div {
+          display: flex;
+          gap: 1rem;
+        }
+        & .text-name,
+        .text-service {
+          color: var(--content-secondary);
+          font-size: 0.75rem;
+        }
+        & .text-time-pet{
+          font-weight: 500;
+          font-size: 0.75rem;
+          color: var(--content-primary);
+        }
       }
     }
   }
 }
 
+section header span {
+  color: var(--content-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+section header strong {
+  display: flex;
+  gap: 0.5rem;
+}
+
 @media (width < 1000px) {
-  aside{
+  aside {
     width: 100%;
     padding-inline: 1rem;
   }
