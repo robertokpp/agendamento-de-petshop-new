@@ -6,7 +6,7 @@ export async function schedulesDay() {
   const date = formDate.value;
 
   const dailySchedule =  await scheduleFetch({ date });
- 
+
   hoursLoad({ date , dailySchedule });
 }
 

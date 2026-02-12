@@ -15,7 +15,6 @@ export function hoursLoad({ date, dailySchedule }) {
     const isHourPast = dayjs(date).add(scheduleHour, "hour").isAfter(dayjs());
 
     const available = !disabledHour.includes(hour) && isHourPast
-    console.log(hour ,available)
     
     return { hour, available };
   });

@@ -18,6 +18,8 @@ function createInfo(period, id, hour, tutor, pet, service) {
   spanTutorPet.textContent = `${pet} / ${tutor}`;
   spanService.textContent = service;
   btnRemove.textContent = "Remover agendamento";
+  btnRemove.id = id
+
   btnRemove.classList.add("btn-remove");
 
   li.append(time);
@@ -26,6 +28,7 @@ function createInfo(period, id, hour, tutor, pet, service) {
   li.append(btnRemove);
   ul.append(li);
 }
+
 
 function reder(load) {
   const clear = document.querySelectorAll(".clear")
@@ -64,6 +67,7 @@ function reder(load) {
     }
   });
 }
+
 
 
 export async function loadRender() {
