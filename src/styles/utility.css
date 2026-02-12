@@ -10,6 +10,15 @@
   width: 30%;
   margin-left: 70%;
 }
+@media (width < 1000px) {
+  .btn-new {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-left: 0;
+  margin-bottom: 1rem;
+}
+}
 
 .btn-ns {
   padding: 0.75rem 1.5rem;
@@ -30,6 +39,13 @@
   cursor: pointer;
   color: var(--content-tertiary);
   font-size: 0.75rem;
+  text-align: right;
+}
+
+@media (width < 1000px) {
+  .btn-remove {
+    text-align: right;
+  }
 }
 .btn-remove:hover {
   color: var(--content-primary);

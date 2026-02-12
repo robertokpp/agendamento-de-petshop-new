@@ -23,16 +23,16 @@ aside {
         display: flex;
         justify-content: space-between;
         padding: 0.75rem 1rem;
-        div {
+        & div {
           display: flex;
           gap: 1rem;
         }
         & .text-name,
-        .text-service {
+        & .text-service {
           color: var(--content-secondary);
           font-size: 0.75rem;
         }
-        & .text-time-pet{
+        & .text-time-pet {
           font-weight: 500;
           font-size: 0.75rem;
           color: var(--content-primary);
@@ -57,5 +57,22 @@ section header strong {
   aside {
     width: 100%;
     padding-inline: 1rem;
+    & > header {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    & .period {
+       & ul {
+      padding: 1.25rem;
+      & li {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+    }
+    }
   }
+
 }

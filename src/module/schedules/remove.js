@@ -11,7 +11,11 @@ uls.forEach((ul) => {
         if (isConfirm) {
           await ScheduleRemove({ id });
           loadRender()
+        } else {
+          return
         }
+      } else{
+        return
       }
 
     }
